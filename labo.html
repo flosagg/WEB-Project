@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laboratoire de biologie médicale</title>
+        <meta charset="utf-8" />
+        <link href="accueil.html">
+        <link href="styleSheet.css" rel="stylesheet" type="text/css"/>
+        <link href="footer.css" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <style>
+            button {
+                display: inline-block;
+                background-color: black;
+                border-radius: 10px;
+                border: 4px double #cccccc;
+                color: #eeeeee;
+                text-align: center;
+                font-size: 15px;
+                padding: 10px;
+                width: 100px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+            }
+            button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            button span:after {
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            button:hover {
+                background-color: grey;
+            }
+            button:hover span {
+                padding-right: 25px;
+            }
+            button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+        
+            <div class="wrapper">
+                <div class="header">
+                  <nav class="navbar navbar-expand-lg bg-light">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="ac.html">OMNES SANTE</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="vosRdv.html">VOS RENDEZ-VOUS</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">VOTRE COMPTE</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              TOUT PARCOURIR
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="medecinGeneral.html">MEDECINE GENERALE</a></li>
+                              <li><a class="dropdown-item" href="medecinSpecialiste.html">MEDECINE SPECIALISTES</a></li>
+                              <li>
+                                <hr class="dropdown-divider">
+                              </li>
+                              <li><a class="dropdown-item" href="labo.html">LABORATOIRES</a></li>
+                            </ul>
+            
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false">
+                              CONNEXION
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="Login_reg.html">EN TANT QUE CLIENT</a></li>
+                              <li><a class="dropdown-item" href="#">EN TANT QU'ADMIN</a>
+                              </li>
+            
+                            </ul>
+                          </li>
+                          </li>
+            
+                        </ul>
+                        <form class="d-flex" role="search">
+                          <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">Rechercher</button>
+                        </form>
+                      </div>
+                    </div>
+                  </nav>
+                </div><br>
+            <br>
+
+            <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1" ></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2" ></li>
+                </ol>
+        
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="background-image:url(https://www.studyrama.com/IMG/arton836.png);">
+                        <div class="overlay-image"></div>
+                        <div class="containers">
+                            <h1>Découvrez notre laboratoire</h1>
+                            <p>Découvrez les services proposés par notre laboratoire et rencontrez nos experts ! </p>
+                            <button type="button" class="btn btn-lg btn-outline-light"> Cliquez pour en savoir plus!</button>
+                        </div> 
+                    </div>
+                    <div class="carousel-item " style="background-image:url(https://neoviaretraite.fr/wp-content/uploads/2019/04/Medecins_neovia-min.jpg);">
+                        <div class="overlay-image"></div>
+                        <div class="containers">
+                            <h1 class="display-2">Prenez rendez-vous sans attendre !</h1>
+                            <p>Reserver un créneau pour effectuer votre examen dans les 24h</p>
+                            <button type="button" class="btn btn-lg btn-outline-light"> Cliquez pour en savoir plus!</a>
+                            </div>
+                    </div>
+                    <div class="carousel-item" style="background-image:url(https://lejournal.cnrs.fr/sites/default/files/styles/visuel_principal/public/assets/images/adobestock_334946041_72dpi.jpg);">
+                        <div class="overlay-image"></div>
+                        <div class="containers" style="color:white">
+                            <h1 class="display-2">Information COVID-19</h1>
+                            <p>Le nombre de cas reste toujours en baisse en France métropolitaine, cependant nos médecins nous conseil de toujours rester vigilant et de continuer à porter le masque dans les transports en commun bien qu'il ne soit plus obligatoir </p>
+                            <button type="button" class="btn btn-lg btn-outline-light"> Cliquez pour en savoir plus!</a>
+                        </div> 
+                    </div>
+                </div>
+                <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                    <span class="sr-only"></span>
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+                    <span class="sr-only"></span>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <br><br><br>
+
+            <labo>
+                <element>
+                    <img src="image-labo.jpg" width="350px">
+                </element>
+                <element>
+                    <h2>Laboratoires de biologie médicale</h2>
+                    <p> Téléphone :+33 01 22 33 44 55</p>
+                    <p>Email: labobiologie@omnessante.fr</p>
+                    <button onclick="location.href='services.html'">
+                        <span>Nos services</span>
+                    </button>
+                </element>
+            </labo>
+        </div>
+
+        <br><br><br>
+
+        <section class="sec">
+            <footer class="foot">
+                <div class="cont">
+                    <div class="row">
+                        <div class="footer-col">
+                            <h4>A propos de OMNES SANTE</h4>
+                            <ul>
+                                <li><a href="#">La team</li></a>
+                                <li><a href="#">Notre laboratoire</li></a>
+                                <li><a href="cont.html">Contact</li></a>
+                                <li><a href="#">News de la semaine</li></a>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Nos politiques et aides</h4>
+                            <ul>
+                                <li><a href="#">FAQ</li></a>
+                                <li><a href="#">Politiques de confidentialité</li></a>
+                                <li><a href="#">Test COVID-Depistage</li></a>
+            
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Trouvez votre spécialiste</h4>
+                            <ul>
+                                <li><a href="#">Médecins généralistes</li></a>
+                                <li><a href="#">Médecines spécialistes</li></a>
+                                <li><a href="#">Analyses médicales</li></a>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Rejoignez-nous!</h4>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content=" width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "poppins", sans-serif;
+
+        }
+
+        body{
+            min-height: 100vh;
+            background: url(Images/admin.png)no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .side-bar{
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            width: 290px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            overflow-y: auto;
+            transition: 0.6s ease;
+            transition-property: left;
+        }
+        .side-bar.active{
+            left:0;
+        }
+
+        .side-bar .menu{
+            width: 100%;
+            margin-top: 80px;
+        }
+        .side-bar .menu .item{
+            position:  relative;
+            cursor: pointer;
+
+        }
+        .side-bar .menu .item a{
+            color: black;   
+            font-size: 16px;
+            text-decoration: none;
+            display: block;
+            padding: 5px 30px ;
+            line-height: 60px;
+        }
+
+        .side-bar .menu .item a:hover{
+            background: aliceblue;
+            transition: 0.3s ease;
+        }
+
+        .side-bar .menu .item i{
+            margin-right: 15px;
+        }
+
+        .side-bar .menu .item a .dropdown{
+            position: absolute;
+            right:0;
+            margin: 20px;
+            transition: 0.3s ease;
+        }
+        .side-bar .menu .item .sub-menu{
+            background: rgba(255,255,255,0.1);
+        }
+
+        .side-bar .menu .item .sub-menu a{
+            padding-left: 80px;
+
+        }
+        .rotate{
+            transform: rotate(90deg);
+        }
+        .close-btn{
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            right:0;
+            margin: 25px;
+            cursor: pointer;
+        }
+        .menu-btn{
+            position: absolute;
+            color: black;
+            font-size: 20px;
+            margin: 25px;
+            cursor: pointer;
+        }
+        .main{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+
+        }
+        .main h1{
+            color: rgba(255,255,255,0.8);
+            font-size: 60px;
+            text-align: center;
+            line-height: 80px;        
+        }
+        .danger{
+            color: rgb(155, 191, 223);
+        }
+        .side-bar .top .logo img{
+            width: 4rem;
+            height: 4rem;
+        }
+        .side-bar .top .logo{
+            margin:15px 0;
+            display: flex;
+            gap: 0.1rem;
+        }
+        .side-bar .top .logo h5{
+            margin: 20px 10px;
+            font-size: 35px;
+            line-height: 20px;
+        }
+        @media (max-width: 900px){
+            .main h1{
+                font-size: 40px;
+                line-height: 60px;
+            }
+        }
+    </style>
+ 
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="side-bar">
+        <div class="top">
+            <div class="logo">
+                <img src="Images/pha.png">
+                <h5>OMNES <span class="danger">SANTE</span></h5>
+            </div>
+        </div>
+        <div class="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+            <div class="menu">
+                <div class="item"><a href="#"><i class="fas fa-desktop"></i> Menu</a></div>
+                <div class="item">
+                    <a class="sub-btn"><i class="fa-solid fa-user-doctor"></i> Médecins généralistes<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">Ajout de médecins</a>
+                        <a href="#" class="sub-item">Supression</a>
+                        <a href="#" class="sub-item">Modification</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <a class="sub-btn"><i class="fa-solid fa-stethoscope"></i> Médecins spécialistes<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">Ajout de médecins</a>
+                        <a href="#" class="sub-item">Supression</a>
+                        <a href="#" class="sub-item">Modification</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <a class="sub-btn"><i class="fa-solid fa-person"></i> Clients<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">Ajout de clients</a>
+                        <a href="#" class="sub-item">Supressions</a>
+                        <a href="#" class="sub-item">Modification</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <a class="sub-btn"><i class="fa-solid fa-calendar-check"></i> Rendez-vous<i class="fas fa-angle-right dropdown"></i></a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">Ajout de rendez-vous</a>
+                        <a href="#" class="sub-item">Supression</a>
+                        <a href="#" class="sub-item">Modification </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="#"><i class="fa-solid fa-vials"></i> Laboratoires</a>
+                </div>
+                <div class="item">
+                    <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Deconnexion</a></div>
+            </div>
+    </div>
+    <section class="main">
+        <h1> Bonjour et bienvenue sur votre bureau<br>Veuillez cliquer en haut à gauche pour faire des modifications</h1>
+    </section>
+
+    <script type ="text/javascript">
+        $(document).ready(function(){
+            $('.sub-btn').click(function(){
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+            
+            $('.menu-btn').click(function(){
+                $('.side-bar').addClass('active');
+                $('.menu-btn').css("visibility","hidden");
+            });
+            $('.close-btn').click(function(){
+                $('.side-bar').removeClass('active');
+                $('.menu-btn').css("visibility","visible");
+            });
+        });
+    </script>
+
+</body>
+</html>
